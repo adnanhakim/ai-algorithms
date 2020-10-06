@@ -2,6 +2,27 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
+/**
+ * @author Adnan Hakim
+ * @code A* Search (8-puzzle Problem)
+ * @start [[1, 2, 0], [4, 5, 3], [7, 8, 6]]
+ * @goal [[1, 2, 3], [4, 5, 6], [7, 8, 0]]
+ * @output
+ * [1, 2, 0]
+ * [4, 5, 3]
+ * [7, 8, 6]
+ *
+ * [1, 2, 3]
+ * [4, 5, 0]
+ * [7, 8, 6]
+ *
+ * [1, 2, 3]
+ * [4, 5, 6]
+ * [7, 8, 0]
+ *
+ * G Score: 2
+ * Reached goal state
+ */
 public class AStarSearch {
     private static boolean found = false;
 
@@ -25,7 +46,7 @@ public class AStarSearch {
 
         // Move space above
         if (row > 0)
-            priorityQueue.offer(copy(current, row, col,row - 1, col));
+            priorityQueue.offer(copy(current, row, col, row - 1, col));
 
         // Move space below
         if (row < current.length - 1)
@@ -70,8 +91,16 @@ public class AStarSearch {
     }
 
     public static void main(String[] args) {
-        int[][] start = {{1, 2, 0}, {4, 5, 3}, {7, 8, 6}};
-        int[][] goal = {{1, 2, 3}, {4, 5, 6}, {7, 8, 0}};
+        int[][] start = {
+                {1, 2, 0},
+                {4, 5, 3},
+                {7, 8, 6}
+        };
+        int[][] goal = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 0}
+        };
         aStar(start, goal, 0);
     }
 }
