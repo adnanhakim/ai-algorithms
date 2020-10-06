@@ -17,6 +17,7 @@ A fun side project to perform AI algorithms using plain java code.
 1. Simple Hill Climbing (Search Tree)
 1. Steepest Hill Climbing (Search Tree)
 1. Steepest Hill Climbing (N Queens)
+1. A* Search (8-puzzle Problem)
 
 ## Developer
 
